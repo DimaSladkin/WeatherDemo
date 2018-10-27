@@ -23,6 +23,6 @@ class SharedPreferencesRepositoryImpl(context: Context) : SharedPreferencesRepos
     override fun getLocation(): LocationModel {
         val type = prefs.getString(LOCATION_TYPE_KEY, "") ?: ""
         val title = prefs.getString(LOCATION_TITLE_KEY, "") ?: ""
-        return LocationModel(title, type)
+        return LocationModel(title, type, "", "")
     }
 }
