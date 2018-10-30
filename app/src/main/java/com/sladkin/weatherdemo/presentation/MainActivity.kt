@@ -2,6 +2,7 @@ package com.sladkin.weatherdemo.presentation
 
 import android.Manifest
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sladkin.weatherdemo.R
 import com.sladkin.weatherdemo.presentation.adapter.ViewPagerAdapter
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onError(e: Throwable) {
-
+        Timber.i(e.toString())
+        Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
     }
 }

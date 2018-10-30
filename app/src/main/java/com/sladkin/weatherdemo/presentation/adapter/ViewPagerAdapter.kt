@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 
 class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-    val fragmentList = ArrayList<Pair<Fragment, String>>()
+    private val fragmentList = ArrayList<Pair<Fragment, String>>()
 
     override fun getItem(position: Int): Fragment {
         return fragmentList[position].first
