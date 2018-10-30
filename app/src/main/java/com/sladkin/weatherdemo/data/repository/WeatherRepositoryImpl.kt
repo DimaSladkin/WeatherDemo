@@ -44,12 +44,10 @@ class WeatherRepositoryImpl(private val context: Context,
     }
 
     override fun getCurrentWeather(): Observable<CurrentWeatherModel> {
-        Timber.i("get current weather")
         return checkForUpdate().andThen(getCurrentWeatherFromDb()).toObservable()
     }
 
     override fun getHourlyWeather(): Observable<List<WeatherModel>> {
-        Timber.i("get hourly weather")
         return checkForUpdate().andThen(getHourlyWeatherFromDb()).toObservable()
     }
 
@@ -61,19 +59,17 @@ class WeatherRepositoryImpl(private val context: Context,
         return getLocation()
                 .flatMapCompletable {
                     getCurrentWeatherFromServer(it)
-                            .subscribeOn(Schedulers.io())
                             .ignoreElement()
                             .mergeWith(
                                     getHourlyWeatherFromServer(it, Date().getFormatedDate())
-                                            .subscribeOn(Schedulers.io())
                                             .ignoreElement()
                             )
                 }
-                .doOnComplete { sharedPrefsRepository.saveLastUpdatedTime(System.currentTimeMillis()) }
+                .doOnSubscribe { sharedPrefsRepository.saveLastUpdatedTime(System.currentTimeMillis()) }
+                .doOnError { sharedPrefsRepository.saveLastUpdatedTime(0) }
     }
 
     private fun getCurrentWeatherFromServer(woeid: Int): Single<CurrentWeatherModel> {
-        Log.i("onx", "get current weather")
         return weatherApi.getCurrentWeather(woeid)
                 .doOnEvent { t1, _ ->
                     t1?.let {
@@ -87,10 +83,8 @@ class WeatherRepositoryImpl(private val context: Context,
         return weatherApi.getHourlyWeather(woeid, date)
                 .doOnEvent { t1, _ ->
                     t1?.let {
-                        Timber.i("hourly weather from server - $t1")
-                        weatherDao.saveWeather(
+                        weatherDao.insertWeather(
                                 it.map { item ->
-                                    Timber.i("map - $item to db")
                                     weatherMapper.apiModelToDb(item, WeatherDbModel.HOURLY_TYPE)
                                 }
                         )
@@ -101,11 +95,12 @@ class WeatherRepositoryImpl(private val context: Context,
 
     private fun saveCurrentWeather(it: CurrentWeatherApiModel) {
         Timber.i("save weather - $it")
+        weatherDao.deleteAllWeather()
         weatherDao.saveCurrentWeather(currentWeatherMapper.apiModelToDb(it))
-        weatherDao.saveWeather(
+        weatherDao.insertWeather(
                 it.weather.let { list ->
                     list.map { item ->
-                        weatherMapper.apiModelToDb(item)
+                        weatherMapper.apiModelToDb(item, WeatherDbModel.DAILY_TYPE)
                     }
                 }
         )
@@ -117,14 +112,13 @@ class WeatherRepositoryImpl(private val context: Context,
     }
 
     private fun getDailyWeatherFromDb(): Flowable<List<WeatherModel>> {
-        return weatherDao.getWeather(WeatherDbModel.HOURLY_TYPE)
+        return weatherDao.getWeather(WeatherDbModel.DAILY_TYPE)
                 .map { list -> list.map { weatherMapper.dbModelToDomain(it) } }
     }
 
     private fun getCurrentWeatherFromDb(): Flowable<CurrentWeatherModel> {
         return weatherDao.getCurrentWeather()
                 .map {
-                    Timber.i("from db - ${it.title}")
                     currentWeatherMapper.dbModelToDomain(it)
                 }
     }

@@ -1,5 +1,6 @@
 package com.sladkin.weatherdemo.di
 
+import com.sladkin.weatherdemo.domain.usecase.impl.ForceUpdateUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetCurrentWeatherUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetDailyWeatherUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetHourlyWeatherUseCase
@@ -22,7 +23,7 @@ val presentationModule = module {
     single<UseCaseSchedulers> { IoMainSchedulers() }
 
     scope<CurrentWeatherPresenter<CurrentWeatherPresenter.CurrentWeatherView>>(CURRENT_SCOPE) {
-        CurrentWeatherPresenterImpl(get())
+        CurrentWeatherPresenterImpl(get(), get())
     }
 
     scope<HourlyPresenter<HourlyPresenter.HourlyView>>(HOURLY_SCOPE) {
@@ -34,6 +35,7 @@ val presentationModule = module {
     }
 
     scope(CURRENT_SCOPE) { GetCurrentWeatherUseCase(get(), get()) }
+    scope(CURRENT_SCOPE) { ForceUpdateUseCase(get(), get()) }
     scope(DAILY_SCOPE) { GetDailyWeatherUseCase(get(), get()) }
     scope(HOURLY_SCOPE) { GetHourlyWeatherUseCase(get(), get()) }
 

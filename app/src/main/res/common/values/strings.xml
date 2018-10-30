@@ -2,7 +2,7 @@
     <string name="app_name">WeatherDemo</string>
 
     <string name="temp">%d°</string>
-    <string name="percents">%d%</string>
+    <string name="percents">%d \%%</string>
     <string name="km">%f km</string>
     <string name="mb">%f mb</string>
     <string name="km_per_hour">%f km/h</string>

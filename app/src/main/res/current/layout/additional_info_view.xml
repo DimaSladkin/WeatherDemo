@@ -257,6 +257,17 @@
         app:layout_constraintStart_toEndOf="@id/windImage"
         app:layout_constraintTop_toTopOf="@id/windImage" />
 
+    <TextView
+        android:id="@+id/windStatus"
+        app:layout_constraintEnd_toStartOf="@id/windValue"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@id/windTv"
+        app:layout_constraintBottom_toBottomOf="@id/windTv"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/windValue"
         android:layout_width="wrap_content"

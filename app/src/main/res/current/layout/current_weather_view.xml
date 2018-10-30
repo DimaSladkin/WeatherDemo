@@ -6,6 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cityTv"
+        android:text="Kiev"
+        android:textColor="@color/text"
+        app:layout_constraintStart_toEndOf="@id/tempTv"
+        app:layout_constraintTop_toTopOf="@id/tempTv"
+        app:layout_constraintBottom_toBottomOf="@id/tempTv"
+        android:textSize="14pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tempTv"
         android:text="21°"
         android:textSize="35pt"

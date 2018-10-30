@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sladkin.weatherdemo.R
 import com.sladkin.weatherdemo.di.DAILY_SCOPE
 import com.sladkin.weatherdemo.domain.entity.WeatherModel
+import com.sladkin.weatherdemo.presentation.daily.adapter.DailyAdapter
+import kotlinx.android.synthetic.main.daily_fragment.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.scope.ext.android.bindScope
 import org.koin.androidx.scope.ext.android.getOrCreateScope
+import timber.log.Timber
 
 class DailyFragment : Fragment(), DailyPresenter.DailyView {
 
@@ -33,11 +37,14 @@ class DailyFragment : Fragment(), DailyPresenter.DailyView {
         presenter.onViewCreated()
     }
 
+
     override fun onError(e: Throwable) {
         listener.onError(e)
     }
 
     override fun showDailyList(list: List<WeatherModel>) {
-
+        Timber.i("list get $list")
+        dailyRv.adapter = DailyAdapter(context, list)
+        dailyRv.layoutManager = LinearLayoutManager(context)
     }
 }

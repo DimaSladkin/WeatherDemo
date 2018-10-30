@@ -14,12 +14,6 @@ interface WeatherDao {
         insertCurrentWeather(weather)
     }
 
-    @Transaction
-    fun saveWeather(weather: List<WeatherDbModel>) {
-        deleteAllWeather()
-        insertWeather(weather)
-    }
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCurrentWeather(currentWeatherDbModel: CurrentWeatherDbModel)
 

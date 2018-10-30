@@ -8,8 +8,12 @@ interface CurrentWeatherPresenter<T> : Presenter<T> {
     interface CurrentWeatherView {
         fun setCurrentWeather(currentWeatherModel: CurrentWeatherModel)
 
+        fun hideLoading()
+
         fun onError(throwable: Throwable)
     }
 
     fun onViewCreated()
+
+    fun onSwipeToRefresh()
 }
