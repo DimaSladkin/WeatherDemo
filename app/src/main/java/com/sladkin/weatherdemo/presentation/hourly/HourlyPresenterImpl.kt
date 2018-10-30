@@ -2,7 +2,7 @@ package com.sladkin.weatherdemo.presentation.hourly
 
 import com.sladkin.weatherdemo.domain.entity.WeatherModel
 import com.sladkin.weatherdemo.domain.usecase.impl.GetHourlyWeatherUseCase
-import com.sladkin.weatherdemo.extention.rx.observer.DefaultObserver
+import com.sladkin.weatherdemo.utils.rx.observer.DefaultObserver
 import io.reactivex.disposables.CompositeDisposable
 
 class HourlyPresenterImpl<T : HourlyPresenter.HourlyView>(

@@ -1,4 +1,4 @@
-package com.sladkin.weatherdemo.extention.rx.scheduler
+package com.sladkin.weatherdemo.domain.usecase.scheduler
 
 import io.reactivex.Scheduler
 

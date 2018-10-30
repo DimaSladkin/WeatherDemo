@@ -1,6 +1,6 @@
 package com.sladkin.weatherdemo.domain.usecase
 
-import com.sladkin.weatherdemo.extention.rx.scheduler.UseCaseSchedulers
+import com.sladkin.weatherdemo.domain.usecase.scheduler.UseCaseSchedulers
 import io.reactivex.Observable
 import io.reactivex.Observer
 

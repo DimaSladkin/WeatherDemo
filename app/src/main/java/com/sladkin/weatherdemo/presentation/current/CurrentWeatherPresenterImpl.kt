@@ -3,8 +3,8 @@ package com.sladkin.weatherdemo.presentation.current
 import com.sladkin.weatherdemo.domain.entity.CurrentWeatherModel
 import com.sladkin.weatherdemo.domain.usecase.impl.ForceUpdateUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetCurrentWeatherUseCase
-import com.sladkin.weatherdemo.extention.rx.observer.DefaultCompletableObserver
-import com.sladkin.weatherdemo.extention.rx.observer.DefaultObserver
+import com.sladkin.weatherdemo.utils.rx.observer.DefaultCompletableObserver
+import com.sladkin.weatherdemo.utils.rx.observer.DefaultObserver
 import io.reactivex.disposables.CompositeDisposable
 
 class CurrentWeatherPresenterImpl<T : CurrentWeatherPresenter.CurrentWeatherView>(

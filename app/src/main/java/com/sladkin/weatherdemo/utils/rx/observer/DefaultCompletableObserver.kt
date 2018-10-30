@@ -1,18 +1,17 @@
-package com.sladkin.weatherdemo.extention.rx.observer
+package com.sladkin.weatherdemo.utils.rx.observer
 
-import io.reactivex.SingleObserver
+import io.reactivex.CompletableObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-open class DefaultSingleObserver<T>(
+open class DefaultCompletableObserver(
   private val disposables: CompositeDisposable
-) : SingleObserver<T> {
+) : CompletableObserver {
+  override fun onComplete() {}
 
   override fun onSubscribe(d: Disposable) {
     disposables.add(d)
   }
-
-  override fun onSuccess(t: T) {}
 
   override fun onError(e: Throwable) {}
 }

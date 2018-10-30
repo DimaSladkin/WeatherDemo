@@ -4,8 +4,8 @@ import com.sladkin.weatherdemo.domain.usecase.impl.ForceUpdateUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetCurrentWeatherUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetDailyWeatherUseCase
 import com.sladkin.weatherdemo.domain.usecase.impl.GetHourlyWeatherUseCase
-import com.sladkin.weatherdemo.extention.rx.scheduler.IoMainSchedulers
-import com.sladkin.weatherdemo.extention.rx.scheduler.UseCaseSchedulers
+import com.sladkin.weatherdemo.domain.usecase.scheduler.IoMainSchedulers
+import com.sladkin.weatherdemo.domain.usecase.scheduler.UseCaseSchedulers
 import com.sladkin.weatherdemo.presentation.current.CurrentWeatherPresenter
 import com.sladkin.weatherdemo.presentation.current.CurrentWeatherPresenterImpl
 import com.sladkin.weatherdemo.presentation.daily.DailyPresenter

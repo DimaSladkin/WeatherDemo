@@ -1,4 +1,4 @@
-package com.sladkin.weatherdemo.extention
+package com.sladkin.weatherdemo.utils
 
 import java.text.SimpleDateFormat
 import java.util.*

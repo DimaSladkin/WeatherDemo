@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sladkin.weatherdemo.R
 import com.sladkin.weatherdemo.domain.entity.WeatherModel
-import com.sladkin.weatherdemo.extention.getDaily
-import com.sladkin.weatherdemo.extention.getDateFromFormat
-import com.sladkin.weatherdemo.extention.getResourceForString
-import com.sladkin.weatherdemo.extention.parseIsoToDate
+import com.sladkin.weatherdemo.utils.getDaily
+import com.sladkin.weatherdemo.utils.getDateFromFormat
+import com.sladkin.weatherdemo.utils.getResourceForString
 import kotlinx.android.synthetic.main.daily_item.view.*
 
 class DailyAdapter(private val context: Context?, val list: List<WeatherModel>)

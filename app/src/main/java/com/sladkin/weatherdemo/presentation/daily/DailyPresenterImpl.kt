@@ -2,7 +2,7 @@ package com.sladkin.weatherdemo.presentation.daily
 
 import com.sladkin.weatherdemo.domain.entity.WeatherModel
 import com.sladkin.weatherdemo.domain.usecase.impl.GetDailyWeatherUseCase
-import com.sladkin.weatherdemo.extention.rx.observer.DefaultObserver
+import com.sladkin.weatherdemo.utils.rx.observer.DefaultObserver
 import io.reactivex.disposables.CompositeDisposable
 
 class DailyPresenterImpl<T : DailyPresenter.DailyView>(

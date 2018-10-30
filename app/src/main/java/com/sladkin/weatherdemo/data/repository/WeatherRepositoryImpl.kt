@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Build
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.sladkin.weatherdemo.data.db.dao.WeatherDao
 import com.sladkin.weatherdemo.data.db.entity.WeatherDbModel
@@ -20,7 +19,7 @@ import com.sladkin.weatherdemo.domain.repository.SharedPreferencesRepository
 import com.sladkin.weatherdemo.domain.repository.WeatherRepository
 import com.sladkin.weatherdemo.exception.GpsNotEnabledException
 import com.sladkin.weatherdemo.exception.MissingPermissionException
-import com.sladkin.weatherdemo.extention.getFormatedDate
+import com.sladkin.weatherdemo.utils.getFormatedDate
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable

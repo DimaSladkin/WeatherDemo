@@ -1,4 +1,4 @@
-package com.sladkin.weatherdemo.extention.rx.observer
+package com.sladkin.weatherdemo.utils.rx.observer
 
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable

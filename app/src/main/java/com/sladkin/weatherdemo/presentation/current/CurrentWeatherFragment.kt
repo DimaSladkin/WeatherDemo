@@ -9,9 +9,9 @@ import com.sladkin.weatherdemo.R
 import com.sladkin.weatherdemo.di.CURRENT_SCOPE
 import com.sladkin.weatherdemo.domain.entity.CurrentWeatherModel
 import com.sladkin.weatherdemo.domain.entity.WeatherModel
-import com.sladkin.weatherdemo.extention.getHour
-import com.sladkin.weatherdemo.extention.getResourceForString
-import com.sladkin.weatherdemo.extention.parseIsoToDate
+import com.sladkin.weatherdemo.utils.getHour
+import com.sladkin.weatherdemo.utils.getResourceForString
+import com.sladkin.weatherdemo.utils.parseIsoToDate
 import kotlinx.android.synthetic.main.additional_info_view.*
 import kotlinx.android.synthetic.main.current_weather_fragment.*
 import kotlinx.android.synthetic.main.current_weather_view.*
