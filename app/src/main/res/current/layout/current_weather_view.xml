@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tempTv"
+        android:text="21°"
+        android:textSize="35pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/weatherImage"
+        android:src="@drawable/ic_c"
+        app:layout_constraintTop_toTopOf="@id/tempTv"
+        app:layout_constraintBottom_toBottomOf="@id/tempTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/statusTv"
+        android:text="Cloudy"
+        app:layout_constraintTop_toBottomOf="@id/tempTv"
+        app:layout_constraintStart_toStartOf="@id/tempTv"
+        android:textColor="@color/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrowUpImage"
+        android:src="@drawable/ic_arrow_up"
+        app:layout_constraintTop_toTopOf="@id/statusTv"
+        app:layout_constraintBottom_toBottomOf="@id/statusTv"
+        app:layout_constraintStart_toStartOf="@id/weatherImage"
+        android:layout_width="30dp"
+        android:layout_height="15dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/maxTempTv"
+        android:text="20"
+        app:layout_constraintStart_toEndOf="@id/arrowUpImage"
+        app:layout_constraintTop_toTopOf="@id/arrowUpImage"
+        app:layout_constraintBottom_toBottomOf="@id/arrowUpImage"
+        android:textColor="@color/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrowDownImage"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintStart_toEndOf="@id/maxTempTv"
+        app:layout_constraintTop_toTopOf="@id/maxTempTv"
+        app:layout_constraintBottom_toBottomOf="@id/maxTempTv"
+        android:layout_width="30dp"
+        android:layout_height="15dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/minTempTv"
+        android:text="10"
+        app:layout_constraintStart_toEndOf="@id/arrowDownImage"
+        app:layout_constraintTop_toTopOf="@id/arrowDownImage"
+        app:layout_constraintBottom_toBottomOf="@id/arrowDownImage"
+        android:textColor="@color/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sunsetImage"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/statusTv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_shining_sun"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunsetTv"
+        android:text="@string/sunset_sunrise"
+        android:textColor="@color/text"
+        app:layout_constraintTop_toTopOf="@id/sunsetImage"
+        app:layout_constraintStart_toEndOf="@id/sunsetImage"
+        app:layout_constraintBottom_toBottomOf="@id/sunsetImage"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sunsetTimeTv"
+        android:text="@string/sunset_time"
+        android:textColor="@color/text"
+        app:layout_constraintTop_toTopOf="@id/sunsetTv"
+        app:layout_constraintStart_toEndOf="@id/sunsetTv"
+        app:layout_constraintBottom_toBottomOf="@id/sunsetTv"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

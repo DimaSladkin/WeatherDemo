@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class WeatherDbModel(
-        @PrimaryKey var id: Int = 0,
+        val type: Int? = null,
         val date: String? = null,
         val state: String? = null,
         val stateAbr: String? = null,
@@ -17,4 +17,12 @@ data class WeatherDbModel(
         val airPresure: Float? = null,
         val humidity: Float? = null,
         val visibility: Float? = null
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var weatherId: Int = 0
+
+    companion object {
+        const val HOURLY_TYPE = 1
+        const val DAILY_TYPE = 2
+    }
+}

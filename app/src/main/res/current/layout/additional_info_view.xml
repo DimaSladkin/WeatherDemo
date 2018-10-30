@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/humidityImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/humidityTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/humidity"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/humidityImage"
+        app:layout_constraintStart_toEndOf="@id/humidityImage"
+        app:layout_constraintTop_toTopOf="@id/humidityImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/humidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percents"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/humidityTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/humidityTv" />
+
+    <View
+        android:id="@+id/humidityDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/humidityImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cloudImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_cloud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidityDelimiter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cloudTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/cloud_cover"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/cloudImage"
+        app:layout_constraintStart_toEndOf="@id/cloudImage"
+        app:layout_constraintTop_toTopOf="@id/cloudImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cloudValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percents"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/cloudTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cloudTv" />
+
+    <View
+        android:id="@+id/cloudDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/cloudImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/visibilityImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_binoculars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cloudDelimiter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/visibilityTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/visibility"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/visibilityImage"
+        app:layout_constraintStart_toEndOf="@id/visibilityImage"
+        app:layout_constraintTop_toTopOf="@id/visibilityImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/visibilityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/km"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/visibilityTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/visibilityTv" />
+
+    <View
+        android:id="@+id/visibilityDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/visibilityImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dropImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_drop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/visibilityDelimiter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dropTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/drop"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/dropImage"
+        app:layout_constraintStart_toEndOf="@id/dropImage"
+        app:layout_constraintTop_toTopOf="@id/dropImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dropValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temp"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/dropTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dropTv" />
+
+    <View
+        android:id="@+id/dropDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/dropImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pressureImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_pressure_indicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dropDelimiter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pressureTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/pressure"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/pressureImage"
+        app:layout_constraintStart_toEndOf="@id/pressureImage"
+        app:layout_constraintTop_toTopOf="@id/pressureImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/pressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mb"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/pressureTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pressureTv" />
+
+    <View
+        android:id="@+id/pressureDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/pressureImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/windImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_wind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pressureDelimiter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/windTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/wind"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/windImage"
+        app:layout_constraintStart_toEndOf="@id/windImage"
+        app:layout_constraintTop_toTopOf="@id/windImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/windValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/km_per_hour"
+        android:textColor="@color/text"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/windTv"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/windTv" />
+
+    <View
+        android:id="@+id/windDelimiter"
+        app:layout_constraintTop_toBottomOf="@id/windImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/text"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

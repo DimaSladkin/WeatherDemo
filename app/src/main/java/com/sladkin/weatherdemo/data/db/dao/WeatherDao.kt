@@ -1,20 +1,18 @@
 package com.sladkin.weatherdemo.data.db.dao
 
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Transaction
-import com.sladkin.weatherdemo.data.db.entity.LocationDbModel
+import androidx.room.*
+import com.sladkin.weatherdemo.data.db.entity.CurrentWeatherDbModel
 import com.sladkin.weatherdemo.data.db.entity.WeatherDbModel
-import io.reactivex.Single
+import io.reactivex.Flowable
 
+@Dao
 interface WeatherDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertWeather(weather: List<WeatherDbModel>)
-
-    @Query("DELETE FROM weatherdbmodel")
-    fun deleteAllWeather()
+    @Transaction
+    fun saveCurrentWeather(weather: CurrentWeatherDbModel) {
+        deleteCurrentWeather()
+        insertCurrentWeather(weather)
+    }
 
     @Transaction
     fun saveWeather(weather: List<WeatherDbModel>) {
@@ -22,13 +20,22 @@ interface WeatherDao {
         insertWeather(weather)
     }
 
-    @Query("SELECT * FROM weatherdbmodel")
-    fun getAllWeather(): Single<WeatherDbModel>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertCurrentWeather(currentWeatherDbModel: CurrentWeatherDbModel)
+
+    @Query("DELETE FROM currentweatherdbmodel")
+    fun deleteCurrentWeather()
+
+    @Query("DELETE FROM weatherdbmodel")
+    fun deleteAllWeather()
+
+    @Query("SELECT * FROM currentweatherdbmodel")
+    fun getCurrentWeather(): Flowable<CurrentWeatherDbModel>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertLocation(weather: List<LocationDbModel>)
+    fun insertWeather(weather: List<WeatherDbModel>)
 
-    @Query("SELECT * FROM locationdbmodel")
-    fun getLocation(): Single<LocationDbModel>
+    @Query("SELECT * FROM weatherdbmodel WHERE type = :type")
+    fun getWeather(type: Int): Flowable<List<WeatherDbModel>>
 
 }

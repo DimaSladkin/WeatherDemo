@@ -27,7 +27,10 @@ android {
         main {
             res.srcDirs =
                     [
-                            'src/main/res/common'
+                            'src/main/res/common',
+                            'src/main/res/current',
+                            'src/main/res/daily',
+                            'src/main/res/hourly'
                     ]
         }
     }
@@ -37,6 +40,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$androidXVersion"
+    implementation "com.google.android.material:material:$androidXVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
@@ -50,6 +54,7 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-location:$locationApiVersion"
     implementation "pl.charmas.android:android-reactive-location2:$reactiveLocationVersion"
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermission"
 
     implementation "androidx.room:room-rxjava2:$roomVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
